@@ -20,8 +20,8 @@ class Produitcontroller extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
+     {
+      $request->validate([
         'reference'      => 'required|unique:produits',
         'designation'    => 'required',
         'prix_unitaire'  => 'required|numeric',
@@ -29,17 +29,17 @@ class Produitcontroller extends Controller
         'description'    => 'nullable'
     ]);
 
-    Produit::create([
-        'reference'      => $request->reference,
-        'designation'    => $request->designation,
-        'prix_unitaire'  => $request->prix_unitaire,
-        'quantite_stock' => $request->quantite_stock ?? 0,
-        'description'    => $request->description
-    ]);
+    $produit = new Produit();
+    $produit->reference      = $request->reference;
+    $produit->designation    = $request->designation;
+    $produit->prix_unitaire  = $request->prix_unitaire;
+    $produit->quantite_stock = (int) $request->quantite_stock;
+    $produit->description    = $request->description;
+    $produit->save();
 
     return redirect()->route('produits.index')
                      ->with('success', 'Produit ajouté avec succès');
-    }
+}
 
     public function edit(Produit $produit)
     {
@@ -47,19 +47,25 @@ class Produitcontroller extends Controller
     }
 
     public function update(Request $request, Produit $produit)
-    {
-        $request->validate([
-            'reference'      => 'required|unique:produits,reference,'.$produit->id,
-            'designation'    => 'required',
-            'prix_unitaire'  => 'required|numeric',
-            'quantite_stock' => 'required|integer',
-            'description'    => 'nullable'
-        ]);
+{
+    $request->validate([
+        'reference'      => 'required|unique:produits,reference,'.$produit->id,
+        'designation'    => 'required',
+        'prix_unitaire'  => 'required|numeric',
+        'quantite_stock' => 'required|integer',
+        'description'    => 'nullable'
+    ]);
 
-        $produit->update($request->all());
-        return redirect()->route('produits.index')
-                         ->with('success', 'Produit modifié avec succès');
-    }
+           $produit->reference       = $request->reference;
+           $produit->designation     = $request->designation;
+           $produit->prix_unitaire   = $request->prix_unitaire;
+           $produit->quantite_stock  = $request->quantite_stock;
+           $produit->description     = $request->description;
+           $produit->save();
+
+             return redirect()->route('produits.index')
+                     ->with('success', 'Produit modifié avec succès');
+        }
 
     public function destroy(Produit $produit)
     {

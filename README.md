@@ -293,7 +293,11 @@ http://localhost:8000
 | GET | `/commandes/{id}/pdf` | Télécharger la facture PDF |
 
 ---
+## Technologies utiliséés
 
+Laravel, Php, Html, CSS, Boostrap
+
+---
 ## Commandes Artisan Utiles
 
 ```bash
