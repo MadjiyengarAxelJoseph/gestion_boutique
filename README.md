@@ -60,7 +60,7 @@ Le système permet à l'administrateur (Monsieur Ali) de :
 
 ---
 
-### 📦 Gestion des Produits
+###  Gestion des Produits
 | Action | Description |
 |--------|-------------|
 | Ajouter | Enregistrer un nouveau produit |
@@ -72,7 +72,7 @@ Le système permet à l'administrateur (Monsieur Ali) de :
 
 ---
 
-### 🧾Gestion des Commandes
+### Gestion des Commandes
 | Action | Description |
 |--------|-------------|
 | Créer | Créer une commande pour un client |
@@ -321,6 +321,8 @@ php artisan optimize:clear
 ---
 
 ## 👨‍💻 Auteur
+
+Projet proposé par **Mr KAGONBE KANABET Bruno** 
 
 Projet réalisé par **Madjiyengar Axel Joseph** 
 
