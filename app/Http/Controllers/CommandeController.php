@@ -23,7 +23,7 @@ class CommandeController extends Controller
     {   
         $clients = Client::all();
         $produits = Produit::all();
-        return view('commandes.create', compact('clients', 'produits'));
+        return view('commandes.ajouter', compact('clients', 'produits'));
     }
 
     public function store(Request $request)
@@ -72,7 +72,7 @@ class CommandeController extends Controller
     public function show(Commande $commande)
     {
         $commande->load('client', 'ligneCommandes.produit');
-        return view('commandes.show', compact('commande'));
+        return view('commandes.afficher', compact('commande'));
     }
 
     public function destroy(Commande $commande)
