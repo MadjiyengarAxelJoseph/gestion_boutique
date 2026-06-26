@@ -233,7 +233,7 @@ updated_at      TIMESTAMP
 
 **1. Cloner le projet**
 ```bash
-git clone https://github.com/votre-username/ges_boutique.git
+git clone https://github.com/MadjiyengarAxelJoseph/ges_boutique.git
 cd ges_boutique
 ```
 
